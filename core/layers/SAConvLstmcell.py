@@ -67,7 +67,7 @@ class inception(nn.Module):
         self.conv3x3_2 = nn.Sequential(
             nn.Conv2d(in_channels=self.input_channels, out_channels=self.hidden_dim, kernel_size=3, padding=1),
             nn.GroupNorm(self.hidden_dim, self.hidden_dim),
-            nn.Conv2d(in_channels=self.input_channels, out_channels=self.hidden_dim, kernel_size=3, padding=1),
+            nn.Conv2d(in_channels=self.hidden_dim, out_channels=self.hidden_dim, kernel_size=3, padding=1),
             nn.GroupNorm(self.hidden_dim, self.hidden_dim))  # (num_groups, num_channels)
 
         self.conv1x1 = nn.Sequential(

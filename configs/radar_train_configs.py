@@ -15,7 +15,7 @@ def configs():
     parser.add_argument('--input_length', type=int, default=5)
     parser.add_argument('--real_length', type=int, default=15)
     parser.add_argument('--total_length', type=int, default=15)
-    parser.add_argument('--batch_size', type=int, default=1)
+    parser.add_argument('--batch_size', type=int, default=8)
     parser.add_argument('--num_workers', type=int, default=0)
     parser.add_argument('--img_height', type=int, default=128)
     parser.add_argument('--img_width', type=int, default=128)
@@ -29,7 +29,7 @@ def configs():
     parser.add_argument('--filter_size', type=int, default=(5, 5))
     parser.add_argument('--stride', type=int, default=1)
     parser.add_argument('--tau', type=int, default=5)
-    parser.add_argument('--layer_norm',type=bool,default=True)
+    parser.add_argument('--layer_norm', type=bool, default=True)
     parser.add_argument('--cell_mode', type=str, default='normal')
     parser.add_argument('--model_mode', type=str, default='normal')
     parser.add_argument('--lr', type=float, default=1e-3)
@@ -46,7 +46,7 @@ def configs():
     parser.add_argument('--save_dir', type=str, default='checkpoints/mau/')
     parser.add_argument('--gen_frm_dir', type=str, default='results/mau/')
     parser.add_argument('--scheduled_sampling', type=bool, default=True)
-    parser.add_argument('--sampling_stop_iter', type=int, default=50000)  #训练到这里的时候开始调整学习率 , 并且取消教学强制策略
+    parser.add_argument('--sampling_stop_iter', type=int, default=50000)  # 训练到这里的时候开始调整学习率 , 并且取消教学强制策略
     parser.add_argument('--sampling_start_value', type=float, default=1.0)
     parser.add_argument('--sampling_changing_rate', type=float, default=0.00002)
     return parser
